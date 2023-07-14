@@ -14,7 +14,7 @@ export class BooksService {
   // Métodos del servicio
   //-- Método para obtener todos los libros.
   getAll(id_user:number):Observable<Object>{
-    return this.http.get(this.url);
+    return this.http.get(this.url+ '?id_user=' + id_user);
   }
 
   //-- Método para obtener un solo libro --> buscador.

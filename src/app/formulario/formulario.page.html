@@ -58,14 +58,30 @@
         #photo>
       </ion-input>
     </ion-item>
+    <br>
+    <ion-item>
+      <ion-input
+        label="ID"
+        label-placement="floating"
+        fill="solid"
+        placeholder=" Introduce ID del libro (SOLO PARA MODIFICAR O ELIMINAR)"
+        #id>
+      </ion-input>
+    </ion-item>
   </ion-list>
 
   <ion-grid>
     <ion-row class="ion-justify-content-around">
-      <ion-button color="primary" expand="block">Añadir</ion-button>
-      <ion-button color="secondary" expand="block">Modificar</ion-button>
-      <ion-button color="tertiary" expand="block">Borrar</ion-button>
+      <ion-button color="primary" expand="block" (click)="addBook(title.value,type.value,author.value,price.value,photo.value)">Añadir</ion-button>
+      <ion-button color="secondary" expand="block" (click)="modifyBook(title.value,type.value,author.value,price.value,photo.value,id.value)">Modificar</ion-button>
+      <ion-button color="tertiary" expand="block" (click)="deleteBook(id.value)">Borrar</ion-button>
       <ion-button color="success" expand="block" routerLink="/home">Home</ion-button>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <h3>{{msg}}</h3>
     </ion-row>
   </ion-grid>
 </ion-content>

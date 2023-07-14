@@ -13,17 +13,40 @@
           label="ID"
           label-placement="floating"
           fill="solid"
-          placeholder=" Introduce el ID del libro a buscar">
+          placeholder=" Introduce el ID del libro a buscar"
+          #id>
         </ion-input>
     </ion-item>
   </ion-list>
 
   <ion-grid>
     <ion-row class="ion-justify-content-around">
-      <ion-button color="primary" expand="block">Mostrar</ion-button>
+      <ion-button color="primary" expand="block" (click)="showBooks(id.value)">Mostrar</ion-button>
       <ion-button color="success" expand="block" routerLink="/home">Home</ion-button>
     </ion-row>
   </ion-grid>
 
-  
+  <div *ngIf="books.length>0; else empty">
+    <ion-grid>
+      <ion-row class="ion-justify-content-around ion-wrap">
+        <ion-card color="primary" style="width: 230px;height: 550px;" *ngFor="let book of books">
+          <img src="{{book.photo}}"/>
+          <ion-card-header>
+            <ion-card-title>{{book.title}}</ion-card-title>
+            <ion-card-subtitle>{{book.type}}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <strong>Autor:</strong> {{book.author}}
+            <br>
+            <strong>Precio:</strong> {{book.price}}
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ng-template #empty>
+    <h1>No hay Libros</h1>
+  </ng-template>
 </ion-content>
