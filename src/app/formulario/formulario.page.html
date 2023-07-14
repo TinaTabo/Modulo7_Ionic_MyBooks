@@ -1,13 +1,71 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>formulario</ion-title>
+    <ion-title>Formulario</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">formulario</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
+  <br>
+  <ion-list>
+    <br>
+    <ion-item>
+        <ion-input
+          label="Título"
+          label-placement="floating"
+          fill="solid"
+          placeholder=" Introduce el título del libro"
+          #title>
+        </ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input
+        label="Tipo de Tapa"
+        label-placement="floating"
+        fill="solid"
+        placeholder=" Introduce 'Tapa Dura' o 'Tapa Blanda'"
+        #type>
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input
+        label="Autor"
+        label-placement="floating"
+        fill="solid"
+        placeholder=" Introduce el nombre del autor del libro"
+        #author>
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input
+        label="Precio"
+        type="number"
+        label-placement="floating"
+        fill="solid"
+        placeholder=" Introduce el precio del libro"
+        #price>
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input
+        label="Foto"
+        label-placement="floating"
+        fill="solid"
+        placeholder=" Introduce la url de la imagen del libro"
+        #photo>
+      </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-around">
+      <ion-button color="primary" expand="block">Añadir</ion-button>
+      <ion-button color="secondary" expand="block">Modificar</ion-button>
+      <ion-button color="tertiary" expand="block">Borrar</ion-button>
+      <ion-button color="success" expand="block" routerLink="/home">Home</ion-button>
+    </ion-row>
+  </ion-grid>
 </ion-content>
