@@ -1,0 +1,7 @@
+{
+  "name": "Modulo7_Ionic_MyBooks",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
